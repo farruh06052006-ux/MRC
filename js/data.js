@@ -17,8 +17,8 @@ var SITE = {
   "telegram2": "+998931844800",
   "instagram": "https://www.instagram.com/myroad_construction/",
   "address": {
-    "ru": "Ташкент, Узбекистан",
-    "uz": "Toshkent, Oʻzbekiston"
+    "ru": "Husayn Bayqaro ko'chasi 13, 100182, Тоshkent, Toshkent Viloyati, Узбекистан",
+    "uz": "Husayn Bayqaro ko'chasi 13, 100182, Тоshkent, Toshkent Viloyati, Oʻzbekiston"
   },
   "mapEmbed": "https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d6000.429211362828!2d69.34645!3d41.238883!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDHCsDE0JzIwLjAiTiA2OcKwMjAnNDcuMiJF!5e0!3m2!1sru!2s!4v1789156781135!5m2!1sru!2s"
 };
