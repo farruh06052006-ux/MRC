@@ -114,7 +114,7 @@ var I18N = {
 
     'index.ctEyebrow': 'Контакты',
     'index.ctH2': 'Связаться с нами',
-    'index.ctP': 'Позвоните или напишите в мессенджер — ответим в рабочее время.',
+    'index.ctP': 'Работаем круглосуточно, без выходных. Позвоните или напишите в мессенджер.',
     'index.ctPhones': 'Телефоны',
     'index.ctMess': 'Мессенджеры и соцсети',
 
@@ -193,7 +193,7 @@ var I18N = {
 
     'contacts.eyebrow': 'Связь',
     'contacts.h2': 'Контакты',
-    'contacts.p': 'Позвоните или напишите в мессенджер — ответим в рабочее время.',
+    'contacts.p': 'Работаем круглосуточно, без выходных. Позвоните или напишите в мессенджер.',
     'contacts.phones': 'Телефоны',
     'contacts.tg': 'Telegram',
     'contacts.waIg': 'WhatsApp и Instagram',
@@ -314,7 +314,7 @@ var I18N = {
 
     'index.ctEyebrow': 'Aloqa',
     'index.ctH2': 'Biz bilan bogʻlaning',
-    'index.ctP': 'Qoʻngʻiroq qiling yoki messenjerga yozing — ish vaqtida javob beramiz.',
+    'index.ctP': 'Har kuni, tun-u kun ishlaymiz. Qoʻngʻiroq qiling yoki messenjer orqali yozing.',
     'index.ctPhones': 'Telefonlar',
     'index.ctMess': 'Messenjerlar va ijtimoiy tarmoqlar',
 
@@ -393,7 +393,7 @@ var I18N = {
 
     'contacts.eyebrow': 'Aloqa',
     'contacts.h2': 'Kontaktlar',
-    'contacts.p': 'Qoʻngʻiroq qiling yoki messenjerga yozing — ish vaqtida javob beramiz.',
+    'contacts.p': 'Har kuni, tun-u kun ishlaymiz. Qoʻngʻiroq qiling yoki messenjer orqali yozing.',
     'contacts.phones': 'Telefonlar',
     'contacts.tg': 'Telegram',
     'contacts.waIg': 'WhatsApp va Instagram',

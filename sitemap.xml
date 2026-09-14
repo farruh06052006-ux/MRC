@@ -4,16 +4,16 @@
   Страницы товаров добавляются по адресу product.html?id=<id товара>.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://mrc.uz/</loc><priority>1.0</priority></url>
-  <url><loc>https://mrc.uz/catalog.html</loc><priority>0.9</priority></url>
-  <url><loc>https://mrc.uz/production.html</loc><priority>0.8</priority></url>
-  <url><loc>https://mrc.uz/about.html</loc><priority>0.6</priority></url>
-  <url><loc>https://mrc.uz/contacts.html</loc><priority>0.7</priority></url>
+  <url><loc>https://myroadconstruction.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://myroadconstruction.com/catalog.html</loc><priority>0.9</priority></url>
+  <url><loc>https://myroadconstruction.com/production.html</loc><priority>0.8</priority></url>
+  <url><loc>https://myroadconstruction.com/about.html</loc><priority>0.6</priority></url>
+  <url><loc>https://myroadconstruction.com/contacts.html</loc><priority>0.7</priority></url>
 
-  <url><loc>https://mrc.uz/catalog.html?cat=lighting</loc><priority>0.7</priority></url>
-  <url><loc>https://mrc.uz/catalog.html?cat=barrier</loc><priority>0.7</priority></url>
-  <url><loc>https://mrc.uz/catalog.html?cat=flag</loc><priority>0.7</priority></url>
-  <url><loc>https://mrc.uz/catalog.html?cat=mast</loc><priority>0.7</priority></url>
-  <url><loc>https://mrc.uz/catalog.html?cat=fence</loc><priority>0.7</priority></url>
-  <url><loc>https://mrc.uz/catalog.html?cat=other</loc><priority>0.7</priority></url>
+  <url><loc>https://myroadconstruction.com/catalog.html?cat=lighting</loc><priority>0.7</priority></url>
+  <url><loc>https://myroadconstruction.com/catalog.html?cat=barrier</loc><priority>0.7</priority></url>
+  <url><loc>https://myroadconstruction.com/catalog.html?cat=flag</loc><priority>0.7</priority></url>
+  <url><loc>https://myroadconstruction.com/catalog.html?cat=mast</loc><priority>0.7</priority></url>
+  <url><loc>https://myroadconstruction.com/catalog.html?cat=fence</loc><priority>0.7</priority></url>
+  <url><loc>https://myroadconstruction.com/catalog.html?cat=other</loc><priority>0.7</priority></url>
 </urlset>

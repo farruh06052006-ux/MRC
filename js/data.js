@@ -31,8 +31,8 @@ var CATEGORIES = [
       "uz": "Yoritish ustunlari"
     },
     "desc": {
-      "ru": "Стальные опоры высотой от 4 до 12 метров: конические, гранёные, прямые. Стандартные модели и изготовление под проект.",
-      "uz": "Balandligi 4 dan 12 metrgacha boʻlgan poʻlat ustunlar: konussimon, qirrali, toʻgʻri. Standart modellar va loyiha boʻyicha tayyorlash."
+      "ru": "Стальные опоры высотой от 7 до 12 метров: конические, гранёные, прямые. Стандартные модели и изготовление под проект.",
+      "uz": "Balandligi 7 dan 12 metrgacha boʻlgan poʻlat ustunlar: konussimon, qirrali, toʻgʻri. Standart modellar va loyiha boʻyicha tayyorlash."
     },
     "image": "assets/img/products/dorojnaya_opora_kategoriya.png"
   },
@@ -112,8 +112,8 @@ var PRODUCTS = [
       "uz": "Kvartal ichidagi yoʻllar, avtoturargohlar va piyoda zonalari uchun qirrali ustun."
     },
     "desc": {
-      "ru": "Опора несилового типа для установки светильников на высоте 6 метров. Применяется на дворовых территориях, парковках, в парках и на пешеходных участках. Комплектуется закладной деталью и кронштейном по запросу.",
-      "uz": "Chiroqlarni 6 metr balandlikda oʻrnatish uchun kuchsiz turdagi ustun. Hovli hududlari, avtoturargohlar, bogʻlar va piyoda uchastkalarida qoʻllaniladi. Soʻrov boʻyicha oʻrnatma detal va kronshteyn bilan toʻldiriladi."
+      "ru": "Опора несилового типа для установки светильников на высоте 7 метров. Применяется на дворовых территориях, парковках, в парках и на пешеходных участках. Комплектуется закладной деталью и кронштейном по запросу.",
+      "uz": "Chiroqlarni 7 metr balandlikda oʻrnatish uchun kuchsiz turdagi ustun. Hovli hududlari, avtoturargohlar, bogʻlar va piyoda uchastkalarida qoʻllaniladi. Soʻrov boʻyicha oʻrnatma detal va kronshteyn bilan toʻldiriladi."
     },
     "images": [
       "assets/img/products/ChatGPT Image 8 сент. 2026 г., 20_05_59.png"
