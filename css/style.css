@@ -147,18 +147,22 @@ h1, h2, h3, h4 {
 }
 .hdr__tel:hover { color: var(--gray); }
 
-/* Переключатель языка */
+/* Переключатель языка — на /ru/ и /uz/ это обычные ссылки <a>,
+   на остальных страницах пока кнопки <button> со старым JS-переключателем */
 .lang { display: flex; border: 1px solid var(--line); }
+.lang a,
 .lang button {
+  display: inline-block;
   padding: 6px 10px; min-width: 38px;
   font-family: var(--f-head); font-size: .75rem; font-weight: 600;
   letter-spacing: .06em; text-transform: uppercase;
+  text-align: center; text-decoration: none;
   background: var(--white); color: var(--mute);
   border: 0; cursor: pointer; transition: background .15s, color .15s;
 }
-.lang button + button { border-left: 1px solid var(--line); }
-.lang button:hover { color: var(--ink); }
-.lang button.is-active { background: var(--ink); color: var(--white); }
+.lang a + a, .lang button + button { border-left: 1px solid var(--line); }
+.lang a:hover, .lang button:hover { color: var(--ink); }
+.lang a.is-active, .lang button.is-active { background: var(--ink); color: var(--white); }
 
 .burger {
   display: none; width: 44px; height: 44px;

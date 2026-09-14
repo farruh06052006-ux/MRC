@@ -410,8 +410,12 @@ var I18N = {
   }
 };
 
-/* ---------- Текущий язык ---------- */
+/* ---------- Текущий язык ----------
+   MRC_LANG_LOCK — для страниц вида /ru/ и /uz/ со своим фиксированным
+   языком: он не должен зависеть от localStorage другой страницы.
+------------------------------------------------------------ */
 var LANG = (function () {
+  if (window.MRC_LANG_LOCK && I18N[window.MRC_LANG_LOCK]) return window.MRC_LANG_LOCK;
   try {
     var saved = localStorage.getItem('mrc_lang');
     if (saved && I18N[saved]) return saved;
@@ -463,6 +467,7 @@ function applyI18n() {
 
 /* Переключение языка */
 function setLang(code) {
+  if (window.MRC_LANG_LOCK) return;
   if (!I18N[code] || code === LANG) return;
   LANG = code;
   try { localStorage.setItem('mrc_lang', code); } catch (e) {}
