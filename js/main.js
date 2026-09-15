@@ -133,10 +133,14 @@ function bindContacts() {
 })();
 
 /* ---------- Активный пункт меню ---------- */
+/* Сравниваем полный путь: /ru/ и /ru/index.html — один и тот же адрес */
 (function () {
-  var page = location.pathname.split('/').pop() || 'index.html';
+  function norm(path) { return path.replace(/index\.html$/, ''); }
+  var here = norm(location.pathname);
   document.querySelectorAll('.nav a').forEach(function (a) {
-    if (a.getAttribute('href') === page) a.classList.add('is-active');
+    var href = a.getAttribute('href');
+    if (!href || href.charAt(0) === '#') return;
+    if (norm(new URL(href, location.href).pathname) === here) a.classList.add('is-active');
   });
 })();
 
