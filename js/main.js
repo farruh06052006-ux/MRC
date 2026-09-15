@@ -157,6 +157,58 @@ function bindContacts() {
   });
 })();
 
+/* ---------- Аналитика обращений (dataLayer для GTM) ----------
+   Один клик посетителя — одно событие. Слушатели навешаны
+   делегированием на document, поэтому работают и для карточек,
+   отрисованных позже скриптом (product.js), и для плавающих кнопок.
+   В dataLayer уходят только служебные признаки: язык страницы,
+   расположение блока и id товара (если есть на странице) — без
+   имени, телефона, текста заявки и без адреса/параметров WhatsApp.
+------------------------------------------------------------ */
+function mrcButtonLocation(el) {
+  if (el.closest('.float')) return 'floating';
+  if (el.closest('.hdr')) return 'header';
+  if (el.closest('.foot')) return 'footer';
+  if (el.closest('.pd')) return 'product_card';
+  return 'content';
+}
+
+/* Товар подтверждаем по существующему списку PRODUCTS (js/data.js) —
+   отдельный список id для аналитики не заводим. Чужой/несуществующий
+   ?id= в dataLayer не попадает. */
+function mrcProductId() {
+  var id = window.MRC_PRODUCT_ID || new URLSearchParams(location.search).get('id');
+  if (!id || typeof PRODUCTS === 'undefined') return null;
+  var known = PRODUCTS.some(function (p) { return p.id === id; });
+  return known ? id : null;
+}
+
+function mrcTrack(event, el) {
+  window.dataLayer = window.dataLayer || [];
+  /* product_id передаём всегда, в т.ч. явным null — иначе GTM
+     подхватит значение из предыдущего события на той же странице */
+  window.dataLayer.push({
+    event: event,
+    lang: LANG,
+    button_location: mrcButtonLocation(el),
+    product_id: mrcProductId()
+  });
+}
+
+document.addEventListener('click', function (e) {
+  var a = e.target.closest('a[href]');
+  if (!a) return;
+  var href = a.getAttribute('href') || '';
+
+  if (/^tel:/i.test(href)) {
+    mrcTrack('click_phone', a);
+  } else if (/^https:\/\/wa\.me\//i.test(href) || /^https:\/\/api\.whatsapp\.com\//i.test(href)) {
+    mrcTrack('click_whatsapp', a);
+  } else if (/^https:\/\/t\.me\//i.test(href)) {
+    mrcTrack('click_telegram', a);
+  }
+});
+
 /* ---------- Отправка заявки ----------
    Форма собирает текст и открывает WhatsApp готовым сообщением.
    Это работает без сервера. Как подключить Telegram-бота или
@@ -190,6 +242,7 @@ document.addEventListener('submit', function (e) {
   if (message) text += '\n' + t('msg.text') + ': ' + message;
 
   window.open(waLink(text), '_blank', 'noopener');
+  mrcTrack('form_whatsapp_open', form);
   form.reset();
 });
 
