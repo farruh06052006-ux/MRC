@@ -43,9 +43,11 @@
     }
 
     var root = window.MRC_SITE_ROOT || '';
+    /* У товаров с отдельной языковой карточкой адрес берётся из MRC_PRODUCT_URLS */
+    var urls = window.MRC_PRODUCT_URLS || {};
     cardsBox.innerHTML = list.map(function (p) {
       var name = esc(T(p.name));
-      var href = root + 'product.html?id=' + encodeURIComponent(p.id);
+      var href = urls[p.id] || (root + 'product.html?id=' + encodeURIComponent(p.id));
       var img = root + (p.images[0] || '');
       var tag = p.stock === 'in'
         ? '<span class="tag tag--in">' + esc(t('tag.in')) + '</span>'

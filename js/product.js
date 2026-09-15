@@ -1,12 +1,18 @@
 /* ============================================================
    MRC — страница товара. Товар берётся по ?id= из data.js
+   На отдельных языковых карточках (/ru/..., /uz/...) параметра нет:
+   там товар задан через MRC_PRODUCT_ID, а пути — через MRC_*_PATH.
    ============================================================ */
 
 (function () {
   var root = document.getElementById('product');
   if (!root) return;
 
-  var id = new URLSearchParams(location.search).get('id');
+  var siteRoot = window.MRC_SITE_ROOT || '';
+  var homePath = window.MRC_HOME_PATH || (siteRoot + 'index.html');
+  var catalogPath = window.MRC_CATALOG_PATH || (siteRoot + 'catalog.html');
+
+  var id = new URLSearchParams(location.search).get('id') || window.MRC_PRODUCT_ID;
   var p = PRODUCTS.find(function (x) { return x.id === id; });
   var relBox = document.getElementById('related');
 
@@ -18,7 +24,7 @@
         '<div class="wrap sec">' +
           '<h1>' + esc(t('product.notFound')) + '</h1>' +
           '<p class="lead" style="margin:16px 0 28px">' + esc(t('product.notFoundP')) + '</p>' +
-          '<a class="btn btn--solid" href="catalog.html">' + esc(t('btn.catalog')) + '</a>' +
+          '<a class="btn btn--solid" href="' + catalogPath + '">' + esc(t('btn.catalog')) + '</a>' +
         '</div>';
     };
     renderMissing();
@@ -47,23 +53,23 @@
     var thumbs = p.images.length > 1
       ? '<div class="pd__thumbs">' + p.images.map(function (src, i) {
           return '<div class="frame' + (i === 0 ? ' is-sel' : '') + '" data-i="' + i + '" data-ph="' + (i + 1) + '">' +
-                 '<img src="' + esc(src) + '" alt="" onerror="imgFallback(this)"></div>';
+                 '<img src="' + esc(siteRoot + src) + '" alt="" onerror="imgFallback(this)"></div>';
         }).join('') + '</div>'
       : '';
 
     root.innerHTML =
       '<div class="wrap">' +
         '<nav class="crumbs">' +
-          '<a href="index.html">' + esc(t('crumbs.home')) + '</a> / ' +
-          '<a href="catalog.html">' + esc(t('crumbs.catalog')) + '</a> / ' +
-          '<a href="catalog.html?cat=' + esc(cat.id) + '">' + esc(T(cat.name)) + '</a> / ' +
+          '<a href="' + homePath + '">' + esc(t('crumbs.home')) + '</a> / ' +
+          '<a href="' + catalogPath + '">' + esc(t('crumbs.catalog')) + '</a> / ' +
+          '<a href="' + catalogPath + '?cat=' + esc(cat.id) + '">' + esc(T(cat.name)) + '</a> / ' +
           '<span>' + name + '</span>' +
         '</nav>' +
 
         '<div class="pd">' +
           '<div>' +
             '<div class="frame pd__main" id="pdMain" data-ph="' + name + '">' +
-              '<img src="' + esc(p.images[0] || '') + '" alt="' + name + '" onerror="imgFallback(this)">' +
+              '<img src="' + esc(siteRoot + (p.images[0] || '')) + '" alt="' + name + '" onerror="imgFallback(this)">' +
             '</div>' + thumbs +
           '</div>' +
 
@@ -108,7 +114,7 @@
         root.querySelectorAll('.pd__thumbs .frame').forEach(function (x) { x.classList.remove('is-sel'); });
         th.classList.add('is-sel');
         main.classList.remove('is-ph');
-        main.innerHTML = '<img src="' + esc(p.images[th.dataset.i]) + '" alt="' + name +
+        main.innerHTML = '<img src="' + esc(siteRoot + p.images[th.dataset.i]) + '" alt="' + name +
                          '" onerror="imgFallback(this)">';
       });
     });
@@ -130,15 +136,15 @@
       '<div class="wrap">' +
         '<div class="sec-head">' +
           '<div><h2>' + esc(t('product.related')) + '</h2></div>' +
-          '<a class="link" href="catalog.html?cat=' + esc(cat.id) + '">' +
+          '<a class="link" href="' + catalogPath + '?cat=' + esc(cat.id) + '">' +
             esc(t('product.relatedLink')) + '</a>' +
         '</div>' +
         '<div class="cards">' + rel.map(function (r) {
           var rn = esc(T(r.name));
-          var href = 'product.html?id=' + encodeURIComponent(r.id);
+          var href = siteRoot + 'product.html?id=' + encodeURIComponent(r.id);
           return '<article class="card">' +
             '<a class="frame" data-ph="' + rn + '" href="' + href + '">' +
-              '<img src="' + esc(r.images[0] || '') + '" alt="' + rn + '" loading="lazy" onerror="imgFallback(this)"></a>' +
+              '<img src="' + esc(siteRoot + (r.images[0] || '')) + '" alt="' + rn + '" loading="lazy" onerror="imgFallback(this)"></a>' +
             '<div class="card__body"><h3>' + rn + '</h3><p>' + esc(T(r.short)) + '</p>' +
               '<div class="card__foot">' +
                 (r.stock === 'in'
@@ -151,7 +157,18 @@
       '</div>';
   }
 
-  /* ---------- Разметка для поисковиков ---------- */
+  /* ---------- Разметка для поисковиков ----------
+     На отдельных языковых карточках Product-разметка уже лежит
+     в самом HTML — второй копии быть не должно.
+  ------------------------------------------------------------ */
+  function hasProductSchema() {
+    var nodes = document.querySelectorAll('script[type="application/ld+json"]');
+    for (var i = 0; i < nodes.length; i++) {
+      if (nodes[i].textContent.indexOf('"Product"') !== -1) return true;
+    }
+    return false;
+  }
+
   function injectSchema() {
     var node = document.createElement('script');
     node.type = 'application/ld+json';
@@ -174,6 +191,6 @@
   }
 
   render();
-  injectSchema();
+  if (!hasProductSchema()) injectSchema();
   document.addEventListener('mrc:lang', render);
 })();
