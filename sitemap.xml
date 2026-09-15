@@ -1,19 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  Замените mrc.uz на реальный домен после публикации сайта.
-  Страницы товаров добавляются по адресу product.html?id=<id товара>.
--->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://myroadconstruction.com/</loc><priority>1.0</priority></url>
-  <url><loc>https://myroadconstruction.com/catalog.html</loc><priority>0.9</priority></url>
-  <url><loc>https://myroadconstruction.com/production.html</loc><priority>0.8</priority></url>
-  <url><loc>https://myroadconstruction.com/about.html</loc><priority>0.6</priority></url>
-  <url><loc>https://myroadconstruction.com/contacts.html</loc><priority>0.7</priority></url>
-
-  <url><loc>https://myroadconstruction.com/catalog.html?cat=lighting</loc><priority>0.7</priority></url>
-  <url><loc>https://myroadconstruction.com/catalog.html?cat=barrier</loc><priority>0.7</priority></url>
-  <url><loc>https://myroadconstruction.com/catalog.html?cat=flag</loc><priority>0.7</priority></url>
-  <url><loc>https://myroadconstruction.com/catalog.html?cat=mast</loc><priority>0.7</priority></url>
-  <url><loc>https://myroadconstruction.com/catalog.html?cat=fence</loc><priority>0.7</priority></url>
-  <url><loc>https://myroadconstruction.com/catalog.html?cat=other</loc><priority>0.7</priority></url>
+  <url><loc>https://myroadconstruction.com/ru/</loc></url>
+  <url><loc>https://myroadconstruction.com/ru/dorozhnye-ograzhdeniya/</loc></url>
+  <url><loc>https://myroadconstruction.com/ru/dorozhnye-ograzhdeniya/barernoe-ograzhdenie-11do/</loc></url>
+  <url><loc>https://myroadconstruction.com/ru/dorozhnye-ograzhdeniya/ograzhdenie-dvustoronnee-11dd/</loc></url>
+  <url><loc>https://myroadconstruction.com/ru/flagshtoki/</loc></url>
+  <url><loc>https://myroadconstruction.com/ru/flagshtoki/flagshtok-10m/</loc></url>
+  <url><loc>https://myroadconstruction.com/ru/flagshtoki/flagshtok-8m/</loc></url>
+  <url><loc>https://myroadconstruction.com/ru/katalog/</loc></url>
+  <url><loc>https://myroadconstruction.com/ru/kontakty/</loc></url>
+  <url><loc>https://myroadconstruction.com/ru/machty/</loc></url>
+  <url><loc>https://myroadconstruction.com/ru/machty/vysokomachtovaya-opora-16m/</loc></url>
+  <url><loc>https://myroadconstruction.com/ru/metallicheskie-izdeliya/</loc></url>
+  <url><loc>https://myroadconstruction.com/ru/metallicheskie-izdeliya/stoyka-dorozhnogo-znaka/</loc></url>
+  <url><loc>https://myroadconstruction.com/ru/metallicheskie-ograzhdeniya/</loc></url>
+  <url><loc>https://myroadconstruction.com/ru/metallicheskie-ograzhdeniya/peshehodnoe-ograzhdenie/</loc></url>
+  <url><loc>https://myroadconstruction.com/ru/o-kompanii/</loc></url>
+  <url><loc>https://myroadconstruction.com/ru/opory-osveshcheniya/</loc></url>
+  <url><loc>https://myroadconstruction.com/ru/opory-osveshcheniya/opora-10m/</loc></url>
+  <url><loc>https://myroadconstruction.com/ru/opory-osveshcheniya/opora-7m/</loc></url>
+  <url><loc>https://myroadconstruction.com/ru/opory-osveshcheniya/opora-8m/</loc></url>
+  <url><loc>https://myroadconstruction.com/ru/opory-osveshcheniya/opora-9m/</loc></url>
+  <url><loc>https://myroadconstruction.com/ru/proizvodstvo/</loc></url>
+  <url><loc>https://myroadconstruction.com/uz/</loc></url>
+  <url><loc>https://myroadconstruction.com/uz/aloqa/</loc></url>
+  <url><loc>https://myroadconstruction.com/uz/bayroq-ustunlari/</loc></url>
+  <url><loc>https://myroadconstruction.com/uz/bayroq-ustunlari/bayroq-ustuni-10m/</loc></url>
+  <url><loc>https://myroadconstruction.com/uz/bayroq-ustunlari/bayroq-ustuni-8m/</loc></url>
+  <url><loc>https://myroadconstruction.com/uz/ishlab-chiqarish/</loc></url>
+  <url><loc>https://myroadconstruction.com/uz/katalog/</loc></url>
+  <url><loc>https://myroadconstruction.com/uz/kompaniya-haqida/</loc></url>
+  <url><loc>https://myroadconstruction.com/uz/machtalar/</loc></url>
+  <url><loc>https://myroadconstruction.com/uz/machtalar/baland-machtali-ustun-16m/</loc></url>
+  <url><loc>https://myroadconstruction.com/uz/metall-buyumlar/</loc></url>
+  <url><loc>https://myroadconstruction.com/uz/metall-buyumlar/yol-belgisi-ustuni/</loc></url>
+  <url><loc>https://myroadconstruction.com/uz/metall-panjaralar/</loc></url>
+  <url><loc>https://myroadconstruction.com/uz/metall-panjaralar/piyodalar-panjarasi/</loc></url>
+  <url><loc>https://myroadconstruction.com/uz/yol-tosiqlari/</loc></url>
+  <url><loc>https://myroadconstruction.com/uz/yol-tosiqlari/barer-tosigi-11do/</loc></url>
+  <url><loc>https://myroadconstruction.com/uz/yol-tosiqlari/ikki-tomonlama-tosiq-11dd/</loc></url>
+  <url><loc>https://myroadconstruction.com/uz/yoritish-ustunlari/</loc></url>
+  <url><loc>https://myroadconstruction.com/uz/yoritish-ustunlari/yoritish-ustuni-10m/</loc></url>
+  <url><loc>https://myroadconstruction.com/uz/yoritish-ustunlari/yoritish-ustuni-7m/</loc></url>
+  <url><loc>https://myroadconstruction.com/uz/yoritish-ustunlari/yoritish-ustuni-8m/</loc></url>
+  <url><loc>https://myroadconstruction.com/uz/yoritish-ustunlari/yoritish-ustuni-9m/</loc></url>
 </urlset>

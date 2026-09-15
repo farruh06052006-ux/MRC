@@ -15,7 +15,8 @@
   var urls = window.MRC_PRODUCT_URLS || {};
   var catUrls = window.MRC_CATEGORY_URLS || {};
 
-  var id = new URLSearchParams(location.search).get('id') || window.MRC_PRODUCT_ID;
+  /* Товар, закреплённый за страницей, важнее ?id= — чужой id не подменяет карточку */
+  var id = window.MRC_PRODUCT_ID || new URLSearchParams(location.search).get('id');
   var p = PRODUCTS.find(function (x) { return x.id === id; });
   var relBox = document.getElementById('related');
 
