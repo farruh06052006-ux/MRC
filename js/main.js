@@ -197,8 +197,10 @@ function renderFooterCats() {
   var box = document.getElementById('footCats');
   if (!box) return;
   var catalogPath = window.MRC_CATALOG_PATH || ((window.MRC_SITE_ROOT || '') + 'catalog.html');
+  var catUrls = window.MRC_CATEGORY_URLS || {};
   box.innerHTML = CATEGORIES.slice(0, 4).map(function (c) {
-    return '<li><a href="' + catalogPath + '?cat=' + esc(c.id) + '">' + esc(T(c.name)) + '</a></li>';
+    var href = catUrls[c.id] || (catalogPath + '?cat=' + esc(c.id));
+    return '<li><a href="' + href + '">' + esc(T(c.name)) + '</a></li>';
   }).join('');
 }
 

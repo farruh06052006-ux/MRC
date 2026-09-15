@@ -31,8 +31,8 @@ var CATEGORIES = [
       "uz": "Yoritish ustunlari"
     },
     "desc": {
-      "ru": "Стальные опоры высотой от 7 до 12 метров: конические, гранёные, прямые. Стандартные модели и изготовление под проект.",
-      "uz": "Balandligi 7 dan 12 metrgacha boʻlgan poʻlat ustunlar: konussimon, qirrali, toʻgʻri. Standart modellar va loyiha boʻyicha tayyorlash."
+      "ru": "Опоры освещения 7–10 м — в наличии. Опоры высотой 11–12 м и прямые опоры доступны под заказ. Характеристики и комплектацию согласуем под проект.",
+      "uz": "7–10 m yoritish ustunlari omborda mavjud. Balandligi 11–12 m boʻlgan ustunlar va toʻgʻri ustunlar buyurtma asosida tayyorlanadi. Texnik xususiyatlar va komplektatsiya loyiha boʻyicha kelishiladi."
     },
     "image": "assets/img/products/dorojnaya_opora_kategoriya.png"
   },

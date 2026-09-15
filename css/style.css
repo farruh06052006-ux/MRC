@@ -413,6 +413,21 @@ h1, h2, h3, h4 {
 .specs th { width: 46%; color: var(--gray); }
 .specs td { color: var(--ink); font-family: var(--f-head); font-weight: 500; font-size: .9375rem; }
 
+/* Сравнение моделей на странице категории */
+.compare-wrap { overflow-x: auto; margin-bottom: 32px; }
+.compare { width: 100%; min-width: 520px; border-collapse: collapse; }
+.compare th, .compare td {
+  text-align: left; padding: 13px 16px 13px 0; border-bottom: 1px solid var(--line);
+  font-size: .9375rem; vertical-align: top;
+}
+.compare thead th {
+  font-family: var(--f-head); font-size: .75rem; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--mute);
+}
+.compare tbody th { font-weight: 600; color: var(--ink); }
+.compare tbody th a:hover { text-decoration: underline; }
+.compare td { color: var(--ink); font-family: var(--f-head); font-weight: 500; }
+
 /* ---------- Формы ---------- */
 .form { display: grid; gap: 16px; }
 .form label { display: block; font-size: .8125rem; margin-bottom: 7px; }

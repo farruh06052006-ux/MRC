@@ -13,6 +13,7 @@
   var catalogPath = window.MRC_CATALOG_PATH || (siteRoot + 'catalog.html');
   /* У товаров с отдельной языковой карточкой адрес берётся из MRC_PRODUCT_URLS */
   var urls = window.MRC_PRODUCT_URLS || {};
+  var catUrls = window.MRC_CATEGORY_URLS || {};
 
   var id = new URLSearchParams(location.search).get('id') || window.MRC_PRODUCT_ID;
   var p = PRODUCTS.find(function (x) { return x.id === id; });
@@ -64,7 +65,7 @@
         '<nav class="crumbs">' +
           '<a href="' + homePath + '">' + esc(t('crumbs.home')) + '</a> / ' +
           '<a href="' + catalogPath + '">' + esc(t('crumbs.catalog')) + '</a> / ' +
-          '<a href="' + catalogPath + '?cat=' + esc(cat.id) + '">' + esc(T(cat.name)) + '</a> / ' +
+          '<a href="' + (catUrls[cat.id] || (catalogPath + '?cat=' + esc(cat.id))) + '">' + esc(T(cat.name)) + '</a> / ' +
           '<span>' + name + '</span>' +
         '</nav>' +
 
@@ -138,7 +139,7 @@
       '<div class="wrap">' +
         '<div class="sec-head">' +
           '<div><h2>' + esc(t('product.related')) + '</h2></div>' +
-          '<a class="link" href="' + catalogPath + '?cat=' + esc(cat.id) + '">' +
+          '<a class="link" href="' + (catUrls[cat.id] || (catalogPath + '?cat=' + esc(cat.id))) + '">' +
             esc(t('product.relatedLink')) + '</a>' +
         '</div>' +
         '<div class="cards">' + rel.map(function (r) {

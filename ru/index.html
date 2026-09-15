@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Язык этой страницы фиксирован: не должен переключаться из localStorage другой страницы -->
-<script>window.MRC_LANG_LOCK = 'ru'; window.MRC_SITE_ROOT = '/'; window.MRC_CATALOG_PATH = '/ru/katalog/index.html';</script>
+<script>window.MRC_LANG_LOCK = 'ru'; window.MRC_CATEGORY_URLS = { 'lighting': '/ru/opory-osveshcheniya/' }; window.MRC_SITE_ROOT = '/'; window.MRC_CATALOG_PATH = '/ru/katalog/index.html';</script>
 <title data-i18n="title.index">MRC — металлические конструкции для дорог и инфраструктуры</title>
 <meta name="description" content="MRC (My Road Construction) — опоры освещения, дорожные ограждения, флагштоки, мачты и металлоконструкции. Склад в Ташкенте, производство по чертежам заказчика.">
 <meta name="theme-color" content="#333333">
@@ -320,12 +320,13 @@
   if (!box) return;
   var root = window.MRC_SITE_ROOT || '';
   var catalogPath = window.MRC_CATALOG_PATH || (root + 'catalog.html');
+  var catUrls = window.MRC_CATEGORY_URLS || {};
 
   function render() {
     box.innerHTML = CATEGORIES.map(function (c) {
       var name = esc(T(c.name));
       var img = root + c.image;
-      return '<a class="cat" href="' + catalogPath + '?cat=' + esc(c.id) + '">' +
+      return '<a class="cat" href="' + (catUrls[c.id] || (catalogPath + '?cat=' + esc(c.id))) + '">' +
         '<div class="frame" data-ph="ФОТО: ' + name + '\n' + esc(img) + '">' +
           '<img src="' + esc(img) + '" alt="' + name + '" loading="lazy" onerror="imgFallback(this)"></div>' +
         '<div class="cat__body"><h3>' + name + '</h3><p>' + esc(T(c.desc)) + '</p>' +
