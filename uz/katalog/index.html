@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Язык этой страницы фиксирован: не должен переключаться из localStorage другой страницы -->
-<script>window.MRC_LANG_LOCK = 'uz'; window.MRC_CATEGORY_URLS = { 'lighting': '/uz/yoritish-ustunlari/' }; window.MRC_SITE_ROOT = '/'; window.MRC_CATALOG_PATH = '/uz/katalog/index.html'; window.MRC_PRODUCT_URLS = { 'opora-6m': '/uz/yoritish-ustunlari/yoritish-ustuni-7m/', 'opora-8m': '/uz/yoritish-ustunlari/yoritish-ustuni-8m/', 'opora-9m': '/uz/yoritish-ustunlari/yoritish-ustuni-9m/', 'opora-10m': '/uz/yoritish-ustunlari/yoritish-ustuni-10m/', 'barrier-11do': '/uz/yol-tosiqlari/barer-tosigi-11do/', 'barrier-11dd': '/uz/yol-tosiqlari/ikki-tomonlama-tosiq-11dd/', 'peshehodnoe': '/uz/metall-panjaralar/piyodalar-panjarasi/', 'flag-8m': '/uz/bayroq-ustunlari/bayroq-ustuni-8m/', 'flag-10m': '/uz/bayroq-ustunlari/bayroq-ustuni-10m/', 'mast-16m': '/uz/machtalar/baland-machtali-ustun-16m/', 'stoyka-znaka': '/uz/metall-buyumlar/yol-belgisi-ustuni/' };</script>
+<script>window.MRC_LANG_LOCK = 'uz'; window.MRC_CATEGORY_URLS = { 'lighting': '/uz/yoritish-ustunlari/', 'barrier': '/uz/yol-tosiqlari/', 'flag': '/uz/bayroq-ustunlari/', 'mast': '/uz/machtalar/', 'fence': '/uz/metall-panjaralar/', 'other': '/uz/metall-buyumlar/' }; window.MRC_SITE_ROOT = '/'; window.MRC_CATALOG_PATH = '/uz/katalog/index.html'; window.MRC_PRODUCT_URLS = { 'opora-6m': '/uz/yoritish-ustunlari/yoritish-ustuni-7m/', 'opora-8m': '/uz/yoritish-ustunlari/yoritish-ustuni-8m/', 'opora-9m': '/uz/yoritish-ustunlari/yoritish-ustuni-9m/', 'opora-10m': '/uz/yoritish-ustunlari/yoritish-ustuni-10m/', 'barrier-11do': '/uz/yol-tosiqlari/barer-tosigi-11do/', 'barrier-11dd': '/uz/yol-tosiqlari/ikki-tomonlama-tosiq-11dd/', 'peshehodnoe': '/uz/metall-panjaralar/piyodalar-panjarasi/', 'flag-8m': '/uz/bayroq-ustunlari/bayroq-ustuni-8m/', 'flag-10m': '/uz/bayroq-ustunlari/bayroq-ustuni-10m/', 'mast-16m': '/uz/machtalar/baland-machtali-ustun-16m/', 'stoyka-znaka': '/uz/metall-buyumlar/yol-belgisi-ustuni/' };</script>
 <title data-i18n="title.catalog">Mahsulotlar katalogi — MRC</title>
 <meta name="description" content="Yoritish ustunlari, yoʻl toʻsiqlari, bayroq ustunlari, machtalar, metall panjaralar va MRC ning boshqa buyumlari. Toshkentdagi ombordan va buyurtma boʻyicha.">
 <meta name="theme-color" content="#333333">
@@ -72,11 +72,19 @@
         <p class="eyebrow" data-i18n="catalog.eyebrow">Mahsulotlar</p>
         <h1 style="font-size:clamp(1.75rem,3.2vw,2.5rem);text-transform:uppercase;letter-spacing:-.01em" data-i18n="catalog.h2">Mahsulotlar katalogi</h1>
         <p data-i18n="catalog.p">Ombordagi pozitsiyalar va buyurtma boʻyicha buyumlar. Kerakli oʻlcham roʻyxatda yoʻqmi — oʻlchamingiz boʻyicha tayyorlaymiz.</p>
+        <p>Katalogda eng talabgir mahsulotlar keltirilgan. Kerakli mahsulotni topmasangiz, menejer bilan bogʻlaning — yetkazib berish yoki ishlab chiqarish imkoniyatini aniqlashtiramiz.</p>
       </div>
       <a class="link" href="../../production.html" data-i18n="catalog.link">Buyurtma boʻyicha ishlab chiqarish</a>
     </div>
 
-    <p style="margin-bottom:24px"><a class="link" href="/uz/yoritish-ustunlari/">Yoritish ustunlari haqida batafsil</a></p>
+    <nav aria-label="Mahsulotlar" style="display:flex;flex-wrap:wrap;gap:12px 32px;margin-bottom:28px">
+      <a class="link" href="/uz/yoritish-ustunlari/">Yoritish ustunlari</a>
+      <a class="link" href="/uz/yol-tosiqlari/">Yoʻl toʻsiqlari</a>
+      <a class="link" href="/uz/bayroq-ustunlari/">Bayroq ustunlari</a>
+      <a class="link" href="/uz/machtalar/">Machtalar va maxsus ustunlar</a>
+      <a class="link" href="/uz/metall-panjaralar/">Tashqi metall panjaralar</a>
+      <a class="link" href="/uz/metall-buyumlar/">Boshqa metall buyumlar</a>
+    </nav>
     <div class="filters" id="filters"></div>
     <div class="cards" id="cards">
       <article class="card">
