@@ -11,6 +11,8 @@
   var siteRoot = window.MRC_SITE_ROOT || '';
   var homePath = window.MRC_HOME_PATH || (siteRoot + 'index.html');
   var catalogPath = window.MRC_CATALOG_PATH || (siteRoot + 'catalog.html');
+  /* У товаров с отдельной языковой карточкой адрес берётся из MRC_PRODUCT_URLS */
+  var urls = window.MRC_PRODUCT_URLS || {};
 
   var id = new URLSearchParams(location.search).get('id') || window.MRC_PRODUCT_ID;
   var p = PRODUCTS.find(function (x) { return x.id === id; });
@@ -141,7 +143,7 @@
         '</div>' +
         '<div class="cards">' + rel.map(function (r) {
           var rn = esc(T(r.name));
-          var href = siteRoot + 'product.html?id=' + encodeURIComponent(r.id);
+          var href = urls[r.id] || (siteRoot + 'product.html?id=' + encodeURIComponent(r.id));
           return '<article class="card">' +
             '<a class="frame" data-ph="' + rn + '" href="' + href + '">' +
               '<img src="' + esc(siteRoot + (r.images[0] || '')) + '" alt="' + rn + '" loading="lazy" onerror="imgFallback(this)"></a>' +

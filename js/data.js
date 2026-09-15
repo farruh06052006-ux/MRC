@@ -348,7 +348,7 @@ var PRODUCTS = [
   {
     "id": "opora-10m",
     "cat": "lighting",
-    "stock": "order",
+    "stock": "in",
     "name": {
       "ru": "Опора освещения 10 м",
       "uz": "Yoritish ustuni 10 m"
@@ -358,8 +358,8 @@ var PRODUCTS = [
       "uz": "Avtomobil yoʻllari, sanoat maydonchalari va logistika markazlari uchun."
     },
     "desc": {
-      "ru": "Опора высотой 10 метров для освещения автомобильных дорог и открытых производственных площадок. Изготавливается под проект с учётом ветровой нагрузки региона.",
-      "uz": "Avtomobil yoʻllari va ochiq ishlab chiqarish maydonchalarini yoritish uchun 10 metrli ustun. Mintaqaning shamol yuklamasi hisobga olingan holda loyiha boʻyicha tayyorlanadi."
+      "ru": "Опора высотой 10 метров для освещения автомобильных дорог и открытых производственных площадок. Может изготавливаться под проект с учётом ветровой нагрузки региона.",
+      "uz": "Avtomobil yoʻllari va ochiq ishlab chiqarish maydonchalarini yoritish uchun 10 metrli ustun. Mintaqaning shamol yuklamasi hisobga olingan holda loyiha boʻyicha ham tayyorlanishi mumkin."
     },
     "images": [
       "assets/img/products/ChatGPT Image 8 сент. 2026 г., 20_05_59.png"
