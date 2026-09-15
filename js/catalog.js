@@ -25,7 +25,7 @@
       b.addEventListener('click', function () {
         active = b.dataset.cat;
         history.replaceState(null, '',
-          active === 'all' ? 'catalog.html' : 'catalog.html?cat=' + active);
+          active === 'all' ? location.pathname : location.pathname + '?cat=' + active);
         renderFilters();
         renderCards();
       });
@@ -42,16 +42,18 @@
       return;
     }
 
+    var root = window.MRC_SITE_ROOT || '';
     cardsBox.innerHTML = list.map(function (p) {
       var name = esc(T(p.name));
-      var href = 'product.html?id=' + encodeURIComponent(p.id);
+      var href = root + 'product.html?id=' + encodeURIComponent(p.id);
+      var img = root + (p.images[0] || '');
       var tag = p.stock === 'in'
         ? '<span class="tag tag--in">' + esc(t('tag.in')) + '</span>'
         : '<span class="tag">' + esc(t('tag.order')) + '</span>';
 
       return '<article class="card">' +
           '<a class="frame" data-ph="' + name + '" href="' + href + '">' +
-            '<img src="' + esc(p.images[0] || '') + '" alt="' + name + '" loading="lazy" onerror="imgFallback(this)">' +
+            '<img src="' + esc(img) + '" alt="' + name + '" loading="lazy" onerror="imgFallback(this)">' +
           '</a>' +
           '<div class="card__body">' +
             '<h3>' + name + '</h3>' +

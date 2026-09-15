@@ -196,9 +196,9 @@ document.addEventListener('submit', function (e) {
 function renderFooterCats() {
   var box = document.getElementById('footCats');
   if (!box) return;
-  var root = window.MRC_SITE_ROOT || '';
+  var catalogPath = window.MRC_CATALOG_PATH || ((window.MRC_SITE_ROOT || '') + 'catalog.html');
   box.innerHTML = CATEGORIES.slice(0, 4).map(function (c) {
-    return '<li><a href="' + root + 'catalog.html?cat=' + esc(c.id) + '">' + esc(T(c.name)) + '</a></li>';
+    return '<li><a href="' + catalogPath + '?cat=' + esc(c.id) + '">' + esc(T(c.name)) + '</a></li>';
   }).join('');
 }
 
