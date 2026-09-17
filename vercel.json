@@ -1,6 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "trailingSlash": true,
+  "analytics": {
+    "enable": true
+  },
   "redirects": [
     { "source": "/", "destination": "/uz/", "permanent": true },
     { "source": "/index.html", "destination": "/uz/", "permanent": true },
